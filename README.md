@@ -15,6 +15,7 @@
 <img src="https://repository-images.githubusercontent.com/1138947882/af901757-a06b-442d-8976-c485fcafc230"></img>
 
 #### OMSS-compliant streaming backend powering the CinePro ecosystem.
+
 Built with [@omss/framework](https://www.npmjs.com/package/@omss/framework) for extensible, type-safe media scraping.
 
 **[📖 Documentation](https://docs.cinepro.cc)** · **[💬 Discussions](https://github.com/orgs/cinepro-org/discussions)** · **[🐛 Issues](https://github.com/cinepro-org/core/issues)**
@@ -31,7 +32,7 @@ It now also includes MCP support for AI agents — making it the first streaming
 
 > [!CAUTION]
 > CinePro Core is designed for **personal and home use only.**  
-> While we do not prevent public hosting, it is insecure by default.*
+> While we do not prevent public hosting, it is insecure by default.\*
 >
 > Users are responsible for ensuring compliance with applicable laws and the terms of service of streaming providers.
 
@@ -54,21 +55,31 @@ git clone https://github.com/cinepro-org/core.git && cd core
 npm install
 cp .env.example .env   # add your TMDB_API_KEY and configure additional options if needed
 npm run dev            # http://localhost:3000
-````
+```
 
 For Docker, production deployment, and advanced configuration options → **[Quickstart](https://docs.cinepro.cc/quickstart)**
+
+## Fork Sync + Vercel Auto Deploy
+
+If you run this on a fork and want automatic deploys from synced upstream commits:
+
+1. Connect your **fork repository** to Vercel (not the upstream repo) and set Production Branch to `main`.
+2. In Vercel Project Settings, keep **Auto Deploy** enabled and keep **Ignored Build Step** empty.
+3. Add required environment variables in Vercel (at minimum `TMDB_API_KEY`; add any others from `.env.example` as needed).
+4. Use the workflow at `.github/workflows/sync-fork.yml` to sync upstream `main` into your fork `main` (manual + every 6 hours).
+5. (Optional) Set repository variable `UPSTREAM_REPOSITORY` (example: `cinepro-org/core`) if your upstream is different.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
 
-* 🎯 **OMSS-Compliant** – follows the Open Media Streaming Standard
-* 🔌 **Modular Providers** – drop-in provider system with auto-discovery
-* 🛡️ **Type-Safe** – built with strict TypeScript
-* ⚡ **Production-Ready** – Redis caching, Docker support, and robust error handling
-* 🎬 **Multi-Source Streaming** – resolves movies and TV shows from multiple providers
-* 📺 **Stremio Compatibility** – enable a Stremio addon using the `STREMIO_ADDON` environment variable at `/stremio/manifest.json`
-* 📦 **CineHome Integration** *(planned for late 2026)* – compatible with CineHome download automation
+- 🎯 **OMSS-Compliant** – follows the Open Media Streaming Standard
+- 🔌 **Modular Providers** – drop-in provider system with auto-discovery
+- 🛡️ **Type-Safe** – built with strict TypeScript
+- ⚡ **Production-Ready** – Redis caching, Docker support, and robust error handling
+- 🎬 **Multi-Source Streaming** – resolves movies and TV shows from multiple providers
+- 📺 **Stremio Compatibility** – enable a Stremio addon using the `STREMIO_ADDON` environment variable at `/stremio/manifest.json`
+- 📦 **CineHome Integration** _(planned for late 2026)_ – compatible with CineHome download automation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -90,13 +101,13 @@ See the [Documentation](https://docs.cinepro.cc/core/general-information/develop
   <img src="https://contrib.rocks/image?repo=cinepro-org/core" alt="contrib.rocks image" />
 </a>
 
-*Join the project by contributing!*
+_Join the project by contributing!_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Graphs
 
-![Repobeats analytics image](https://repobeats.axiom.co/api/embed/94fe2818e3f3254c91180779917073d3dbb1ace1.svg "Repobeats analytics image")
+![Repobeats analytics image](https://repobeats.axiom.co/api/embed/94fe2818e3f3254c91180779917073d3dbb1ace1.svg 'Repobeats analytics image')
 
 <a href="https://www.star-history.com/#cinepro-org/core&type=date&legend=top-left">
  <picture>
